@@ -1,0 +1,8 @@
+{
+  "[shellscript]": {
+    "editor.wordWrap": "off"
+  },
+  "[json]": {
+    "editor.wordWrap": "off"
+  }
+}
