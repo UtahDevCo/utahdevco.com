@@ -10,7 +10,7 @@ coverImage: '/images/quiver-photos-black-E5Nj.svg'
 publishedAt: '2024-07-25T15:44:17.320Z'
 ---
 
-\### Project Summary\
+###Project Summary\
 \
 I started Quiver Photos v1 back in January of 2022. It was an exceptionally challenging project, and I was never satisfied with the result.\
 \
@@ -20,10 +20,10 @@ The Google Photos API stripped geo location EXIF metadata, and I misunderstood h
 \
 Even worse, the API throttled me at 10k calls a month. Once it started to get more popular, I'd get inundated by support emails from people who couldn't import their libraries. They'd have to wait until the API limits reset in a week or two.\
 \
-The only solution would be to rewrite the entire thing as a desktop application that scrapes photos.google.com directly.\
-\
-\
-### Technology\
+The only solution would be to rewrite the entire thing as a desktop application that scrapes photos.google.com directly.
+
+### Technology
+
 \
 For the desktop application, I chose PocketBase as the database solution and Wails for the desktop application itself. Wails is written in a combination of Golang and React. It runs on a tiny web client that's just enough to run React.\
 \
