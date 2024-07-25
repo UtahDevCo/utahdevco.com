@@ -1,4 +1,5 @@
 import { signIn, signOut } from "@/lib/auth";
+import { ClickButton } from "./click-button";
 
 type LoginButtonProps = {
   children: React.ReactNode;
@@ -10,10 +11,19 @@ export function SignInButton({ children, provider }: LoginButtonProps) {
     <form
       action={async () => {
         "use server";
+
         await signIn(provider);
       }}
+      className="flex items-center justify-end"
     >
-      <button>{children}</button>
+      <ClickButton
+        clickToDisable
+        key="sign-in-button"
+        size="sm"
+        variant="outline"
+      >
+        {children}
+      </ClickButton>
     </form>
   );
 }
@@ -25,8 +35,16 @@ export function SignOutButton() {
         "use server";
         await signOut();
       }}
+      className="flex items-center justify-end"
     >
-      <button>Sign Out</button>
+      <ClickButton
+        clickToDisable
+        key="sign-out-button"
+        size="sm"
+        variant="outline"
+      >
+        Sign Out
+      </ClickButton>
     </form>
   );
 }
