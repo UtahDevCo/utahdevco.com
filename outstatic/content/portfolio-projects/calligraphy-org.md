@@ -6,7 +6,7 @@ author:
   picture: 'https://avatars.githubusercontent.com/u/878947?v=4'
 slug: 'calligraphy-org'
 description: ''
-coverImage: ''
+coverImage: '/images/calligraphy-logo-ExMz.png'
 publishedAt: '2024-07-25T16:06:34.768Z'
 ---
 
