@@ -23,7 +23,7 @@ export function ReadMore({ children, className, maxHeight }: ReadMoreProps) {
       {children}
       {isOpen ? (
         <div className='flex justify-center'>
-          <Button className='self-center' style={{ bottom: 0 }} onClick={() => setIsOpen(false)} variant='ghost'>
+          <Button className='self-center' onClick={() => setIsOpen(false)} style={{ bottom: 0 }} variant='ghost'>
             Close
           </Button>
         </div>

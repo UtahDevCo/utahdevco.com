@@ -39,14 +39,14 @@ function FirstHero() {
 
       <div className='overflow-hidden rounded-md'>
         <iframe
-          width='560'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+          allowFullScreen
+          frameBorder='0'
           height='315'
+          referrerPolicy='strict-origin-when-cross-origin'
           src='https://www.youtube.com/embed/t2M_7PHxngk?si=CLAGo4Jdp3q4SYi4'
           title='YouTube video player'
-          frameBorder='0'
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-          referrerPolicy='strict-origin-when-cross-origin'
-          allowFullScreen
+          width='560'
         ></iframe>
       </div>
     </section>
@@ -60,8 +60,8 @@ async function Heroes() {
     <section className='flex flex-col sm:flex-row items-stretch justify-center gap-5 p-5 bg-secondary'>
       {heroes.map((hero) => (
         <div
-          key={hero.title}
           className='flex flex-col items-start justify-start p-4 gap-2 bg-primary rounded-md height-full'
+          key={hero.title}
         >
           <h2 className='text-2xl sm:text-3xl font-bold py-1 px-0'>{hero.title}</h2>
           <div className='flex flex-col gap-4 text-sm sm:text-base'>
@@ -120,7 +120,7 @@ async function Portfolio() {
             <div className='relative z-10 flex flex-col items-center gap-6'>
               <h4 className='text-base font-bold'>{project.title}</h4>
 
-              <NextImage src={project.coverImage as string} alt={project.title} width={100} height={100} />
+              <NextImage alt={project.title} height={100} src={project.coverImage as string} width={100} />
             </div>
             <ReadMore className='mdx relative z-10 flex flex-col gap-4' maxHeight={200}>
               <MDXRemote source={project.content} />
@@ -135,7 +135,7 @@ async function Portfolio() {
 function Footer() {
   return (
     <footer className='flex flex-col sm:flex-row items-center justify-between gap-5 px-4 py-5 w-full'>
-      <NextImage alt='UtahDevCo logo' src='/images/logos/udc-logo-square.svg' width={100} height={100} />
+      <NextImage alt='UtahDevCo logo' height={100} src='/images/logos/udc-logo-square.svg' width={100} />
       <div className='flex flex-col gap-1 text-sm sm:text-base font-medium text-right'>
         <a href={CONSTANTS.META.CONTACT_URL}>hey@utahdevco.com</a>
         <span>Draper, Utah</span>

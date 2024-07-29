@@ -16,9 +16,9 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang='en' className='hidden-scroll'>
+    <html className='hidden-scroll' lang='en'>
       <head>
-        <meta name='viewport' content='width=device-width, initial-scale=1.0'></meta>
+        <meta content='width=device-width, initial-scale=1.0' name='viewport'></meta>
       </head>
       <body className={clsx(chivo.className, 'flex flex-col items-center')}>{children}</body>
     </html>
