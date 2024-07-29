@@ -1,7 +1,8 @@
 'use client';
-import { useState } from 'react';
-import { Button } from './ui/button';
 import clsx from 'clsx';
+import { useState } from 'react';
+
+import { Button } from './ui/button';
 
 type ReadMoreProps = {
   children: React.ReactNode;

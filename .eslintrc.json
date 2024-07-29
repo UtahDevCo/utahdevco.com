@@ -1,7 +1,18 @@
 {
   "extends": "next/core-web-vitals",
-  "plugins": ["react"],
+  "plugins": ["react", "import"],
   "rules": {
-    "react/jsx-sort-props": ["warn"]
+    "react/jsx-sort-props": ["warn"],
+    "import/order": [
+      "warn",
+      {
+        "groups": ["builtin", "external", "internal", "parent", "sibling", "index"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ]
   }
 }

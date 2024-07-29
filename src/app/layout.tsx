@@ -1,7 +1,7 @@
-import type { Metadata } from 'next';
-import { Chivo, Righteous } from 'next/font/google';
-import './globals.css';
 import clsx from 'clsx';
+import type { Metadata } from 'next';
+import { Chivo } from 'next/font/google';
+import './globals.css';
 
 const chivo = Chivo({ subsets: ['latin'] });
 

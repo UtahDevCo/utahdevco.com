@@ -1,14 +1,16 @@
-import { Header } from '@/components/header';
-import { getDocuments } from 'outstatic/server';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { CONSTANTS } from '../../constants';
-import { Righteous } from 'next/font/google';
 import clsx from 'clsx';
+import { Righteous } from 'next/font/google';
 import NextImage from 'next/image';
+import Link from 'next/link';
+import { MDXRemote } from 'next-mdx-remote/rsc';
+import { getDocuments } from 'outstatic/server';
+
 import { Corners } from '@/components/corners';
+import { Header } from '@/components/header';
 import { ReadMore } from '@/components/read-more';
+import { Button } from '@/components/ui/button';
+
+import { CONSTANTS } from '../../constants';
 
 const righteous = Righteous({ subsets: ['latin'], weight: '400' });
 
