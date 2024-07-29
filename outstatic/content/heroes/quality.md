@@ -1,6 +1,6 @@
 ---
 title: 'Quality'
-status: 'draft'
+status: 'published'
 author:
   name: 'Chris Esplin'
   picture: 'https://avatars.githubusercontent.com/u/878947?v=4'

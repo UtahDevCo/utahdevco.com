@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config = {
+  relative: true,
   darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -10,16 +11,6 @@ const config = {
   ],
   prefix: "",
   theme: {
-    colors: {
-      primary: "#fff",
-      "primary-foreground": "#000",
-      secondary: "#000",
-      "secondary-foreground": "#fff",
-      accent: "#d1ac00",
-    },
-    maxWidth: {
-      viewport: "1400px",
-    },
     container: {
       center: true,
       padding: "2rem",
@@ -28,6 +19,17 @@ const config = {
       },
     },
     extend: {
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      colors: {
+        primary: "#fff",
+        "primary-foreground": "#000",
+        secondary: "#000",
+        "secondary-foreground": "#fff",
+        accent: "#d1ac00",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -38,9 +40,9 @@ const config = {
           to: { height: "0" },
         },
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+      maxWidth: {
+        padded: "calc(100% - 2rem)",
+        viewport: "1400px",
       },
     },
   },

@@ -14,7 +14,7 @@ export function SignInButton({ children, provider }: LoginButtonProps) {
 
         await signIn(provider);
       }}
-      className="flex items-center justify-end"
+      className="flex items-center justify-center sm:justify-end"
     >
       <ClickButton
         clickToDisable
@@ -35,7 +35,7 @@ export function SignOutButton() {
         "use server";
         await signOut();
       }}
-      className="flex items-center justify-end"
+      className="flex items-center justify-center sm:justify-end"
     >
       <ClickButton
         clickToDisable

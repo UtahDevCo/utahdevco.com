@@ -7,10 +7,8 @@ import { Button } from "./ui/button";
 export async function Header() {
   const session = await auth();
 
-  //   console.log("session", session);
-
   return (
-    <header className="flex flex-col sm:flex-row items-center gap-2 py-2 px-2 sm:px-6 bg-secondary text-secondary-foreground">
+    <header className="flex flex-col sm:flex-row items-center gap-2 py-2 px-2 sm:px-6 bg-secondary text-secondary-foreground w-full">
       <Link href="/">
         <Image
           alt="UtahDevCo Logo"

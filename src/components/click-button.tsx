@@ -11,14 +11,15 @@ type ClickButtonProps = Readonly<{
 export function ClickButton({ clickToDisable, ...props }: ClickButtonProps) {
   const [disabled, setDisabled] = useState(false);
 
-  console.log("disabled", disabled);
-
   return (
     <Button
-      className={clsx(props.className, { "opacity-50": disabled })}
+      disabled={disabled}
+      className={clsx(props.className, { "disabled:opacity-50": disabled })}
       onClick={(e) => {
         if (clickToDisable) {
-          setDisabled(true);
+          setTimeout(() => {
+            setDisabled(true);
+          });
         }
 
         props.onClick?.(e);

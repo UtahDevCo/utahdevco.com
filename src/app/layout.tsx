@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Chivo } from "next/font/google";
+import { Chivo, Righteous } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
 
@@ -16,7 +16,7 @@ type RootLayoutProps = Readonly<{
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className="hidden-scroll">
       <head>
         <meta
           name="viewport"
@@ -26,7 +26,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <body
         className={clsx(
           chivo.className,
-          "flex flex-col items-center bg-secondary"
+          "flex flex-col items-center"
         )}
       >
         {children}
