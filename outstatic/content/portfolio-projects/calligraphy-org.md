@@ -7,7 +7,7 @@ author:
 slug: 'calligraphy-org'
 description: ''
 coverImage: '/images/calligraphy-logo-ExMz.png'
-publishedAt: '2024-07-25T16:06:34.768Z'
+publishedAt: '2024-07-25T00:00:00.000Z'
 ---
 
 ### Project Summary

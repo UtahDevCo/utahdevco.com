@@ -20,7 +20,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       <head>
         <meta content='width=device-width, initial-scale=1.0' name='viewport'></meta>
       </head>
-      <body className={clsx(chivo.className, 'flex flex-col items-center')}>{children}</body>
+      <body className={clsx(chivo.className, 'flex flex-col items-center overflow-hidden')}>{children}</body>
     </html>
   );
 }

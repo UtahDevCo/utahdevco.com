@@ -1,13 +1,13 @@
 ---
 title: 'QuiverPhotos.com'
-status: 'draft'
+status: 'published'
 author:
   name: 'Chris Esplin'
   picture: 'https://avatars.githubusercontent.com/u/878947?v=4'
 slug: 'quiverphotos-com'
 description: 'I started Quiver Photos v1 back in January of 2022. It was an exceptionally challenging project, and I was never satisfied with the result.'
 coverImage: '/images/quiver-photos-black-E5Nj.svg'
-publishedAt: '2024-07-25T15:44:17.320Z'
+publishedAt: '2024-07-25T00:00:00.000Z'
 ---
 
 ### Project Summary

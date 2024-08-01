@@ -7,7 +7,7 @@ author:
 slug: 'therapyanimalhub-com'
 description: ''
 coverImage: '/images/sitting-dog-black-U4OD.png'
-publishedAt: '2024-07-25T16:15:04.784Z'
+publishedAt: '2024-07-26T00:00:00.000Z'
 ---
 
 ### Project Summary
