@@ -13,7 +13,7 @@ const BRAND_LOGOS = [
 ];
 
 const TRIPLE_BRAND_LOGOS = [...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS];
-const OFFSET_INDEX = 4;
+const OFFSET_INDEX = 3;
 
 export function BrandLogos() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -22,8 +22,6 @@ export function BrandLogos() {
   const offsetActiveIndex = useMemo(() => {
     const resultIndex = activeIndex + OFFSET_INDEX;
     const resultEl = scrollRef.current?.querySelector(`div:nth-child(${resultIndex + 1})`) as HTMLDivElement;
-
-    console.log('resultIndex', resultIndex, resultEl, scrollRef.current);
 
     if (resultEl && scrollRef.current) {
       const containerWidth = scrollRef.current.clientWidth;
@@ -61,6 +59,11 @@ export function BrandLogos() {
   }, [activeIndex]);
 
   useEffect(() => {
+    const resultIndex = activeIndex + OFFSET_INDEX;
+    const resultEl = scrollRef.current?.querySelector(`div:nth-child(${resultIndex + 1})`) as HTMLDivElement;
+
+    resultEl?.scrollIntoView({ behavior: 'instant', block: 'center' });
+
     const interval = setInterval(() => {
       setActiveIndex((prev) => {
         const activeIndex = (prev + 1) % TRIPLE_BRAND_LOGOS.length;
@@ -68,9 +71,10 @@ export function BrandLogos() {
 
         return shouldLoop ? 0 : activeIndex;
       });
-    }, 1000 * 5);
+    }, 1000 * 2);
 
     return () => clearInterval(interval);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
