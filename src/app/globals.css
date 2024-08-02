@@ -60,3 +60,17 @@ a {
   right: -4px;
   z-index: 1;
 }
+
+.brand-logos {
+  transition: all 1s;
+}
+
+.brand-logos [data-highlighted="false"] {
+  color: rgb(50, 50, 50);
+  transform: scale(0.9);
+}
+
+.brand-logos [data-highlighted="true"] {
+  color: rgb(0, 0, 0);
+  transform: scale(1.1);
+}

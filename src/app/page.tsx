@@ -9,8 +9,10 @@ import { Corners } from '@/components/corners';
 import { Header } from '@/components/header';
 import { ReadMore } from '@/components/read-more';
 import { Button } from '@/components/ui/button';
+import * as LogoSvgs from '@/components/logos';
 
 import { CONSTANTS } from '../../constants';
+import { BrandLogos } from '@/components/brand-logos';
 
 const righteous = Righteous({ subsets: ['latin'], weight: '400' });
 
@@ -60,22 +62,25 @@ async function Heroes() {
 
   return (
     <section
-      className='flex flex-col sm:flex-row items-stretch justify-center gap-5 p-5 bg-secondary'
+      className='flex flex-col bg-secondary'
       style={{
         backgroundImage: `url(/_next/image?url=${encodeURIComponent('/images/graphics/topomap-repeat-white-50.png')}&w=256&q=100)`,
       }}
     >
-      {heroes.map((hero) => (
-        <div
-          className='flex flex-col items-start justify-start p-4 gap-2 bg-primary rounded-md height-full'
-          key={hero.title}
-        >
-          <h2 className='text-2xl sm:text-3xl font-bold py-1 px-0'>{hero.title}</h2>
-          <div className='flex flex-col gap-4 text-sm sm:text-base'>
-            <MDXRemote source={hero.content} />
+      <div className='flex flex-col sm:flex-row items-stretch justify-center gap-5 p-5'>
+        {heroes.map((hero) => (
+          <div
+            className='flex flex-col items-start justify-start p-4 gap-2 bg-primary rounded-md height-full'
+            key={hero.title}
+          >
+            <h2 className='text-2xl sm:text-3xl font-bold py-1 px-0'>{hero.title}</h2>
+            <div className='flex flex-col gap-4 text-sm sm:text-base'>
+              <MDXRemote source={hero.content} />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      <BrandLogos />
     </section>
   );
 }
@@ -145,11 +150,10 @@ function Footer() {
       <NextImage alt='UtahDevCo logo' height={100} src='/images/logos/udc-inverse-background-square.png' width={100} />
       <NextImage
         alt='Topo map'
-        className='absolute bottom-[-300px] left-[-500px] z-[-1]'
+        className='absolute bottom-[-100px] left-[-150px] sm:bottom-[-200px] sm:left-[-250px] lg:bottom-[-300px] lg:left-[-500px] z-[-1]'
         height={12 * 100}
         src='/images/graphics/topomap-black-1500x1159.webp'
         width={12 * 77}
-
       />
       <div className='flex flex-col gap-1 text-sm sm:text-base font-medium text-right'>
         <a href={CONSTANTS.META.CONTACT_URL}>hey@utahdevco.com</a>

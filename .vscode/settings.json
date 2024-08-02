@@ -4,5 +4,9 @@
   },
   "[json]": {
     "editor.wordWrap": "off"
-  }
+  },
+  "editor.rulers": [
+    120
+  ],
+  "editor.wordWrapColumn": 120
 }
