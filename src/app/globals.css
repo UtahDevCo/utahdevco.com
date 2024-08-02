@@ -61,13 +61,14 @@ a {
   z-index: 1;
 }
 
-.brand-logos {
-  transition: all 1s;
+.brand-logos [data-highlighted] {
+  transition: transform 1.4s, color 1.4s;
 }
 
 .brand-logos [data-highlighted="false"] {
-  color: rgb(50, 50, 50);
+  color: rgb(190, 190, 190);
   transform: scale(0.9);
+ 
 }
 
 .brand-logos [data-highlighted="true"] {

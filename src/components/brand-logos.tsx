@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 
 import * as LogoSvgs from './logos';
 
@@ -11,24 +11,49 @@ const BRAND_LOGOS = [
   { alt: 'Route', component: LogoSvgs.RouteSvg },
   { alt: 'Toyota', component: LogoSvgs.ToyotaSvg },
 ];
+
 const TRIPLE_BRAND_LOGOS = [...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS];
 const OFFSET_INDEX = 4;
 
 export function BrandLogos() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
+
   const offsetActiveIndex = useMemo(() => {
     const resultIndex = activeIndex + OFFSET_INDEX;
-    const resultEl = scrollRef.current?.querySelector(`svg:nth-child(${resultIndex + 1})`);
-    if (resultEl) {
-      resultEl.scrollIntoView({
-        behavior: activeIndex === 0 ? 'instant' : 'smooth',
-        block: 'nearest',
-        inline: 'center',
-      });
+    const resultEl = scrollRef.current?.querySelector(`div:nth-child(${resultIndex + 1})`) as HTMLDivElement;
+
+    console.log('resultIndex', resultIndex, resultEl, scrollRef.current);
+
+    if (resultEl && scrollRef.current) {
+      const containerWidth = scrollRef.current.clientWidth;
+      const elementWidth = resultEl.clientWidth;
+      const elementLeft = resultEl.offsetLeft;
+      const targetScrollLeft = elementLeft - containerWidth / 2 + elementWidth / 2;
 
       if (activeIndex === 0) {
+        /** Instant scroll to restart the rotation */
+        scrollRef.current.scrollLeft = targetScrollLeft;
         setActiveIndex(1);
+      } else {
+        /** Manual slow-scroll */
+        let start: number | null = null;
+        const initialScrollLeft = scrollRef.current.scrollLeft;
+
+        const step = (timestamp: number) => {
+          if (!start) start = timestamp;
+          const progress = timestamp - start;
+          const scrollAmount = initialScrollLeft + (targetScrollLeft - initialScrollLeft) * (progress / 1000);
+          scrollRef.current!.scrollLeft = scrollAmount;
+
+          if (progress < 1000) {
+            requestAnimationFrame(step);
+          } else {
+            scrollRef.current!.scrollLeft = targetScrollLeft;
+          }
+        };
+
+        requestAnimationFrame(step);
       }
     }
 
@@ -56,7 +81,11 @@ export function BrandLogos() {
     >
       <div className='brand-logos absolute left-0 flex flex-row items-center'>
         {TRIPLE_BRAND_LOGOS.map(({ alt, component: SvgComponent }, i) => {
-          return <SvgComponent alt={alt} data-highlighted={i === offsetActiveIndex} key={alt + i} />;
+          return (
+            <div key={alt + i}>
+              <SvgComponent alt={alt} data-highlighted={i === offsetActiveIndex} />
+            </div>
+          );
         })}
       </div>
     </div>
