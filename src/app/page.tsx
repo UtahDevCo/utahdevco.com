@@ -125,7 +125,7 @@ async function Portfolio() {
       {portfolioProjects.map((project) => {
         return (
           <div
-            className='relative flex flex-col sm:flex-row bg-primary text-primary-foreground rounded-md p-12 gap-10'
+            className='relative flex flex-col sm:flex-row bg-primary text-primary-foreground rounded-md p-12 gap-10 w-full'
             key={project.title}
           >
             <Corners className='' />
@@ -135,7 +135,7 @@ async function Portfolio() {
 
               <NextImage alt={project.title} height={100} src={project.coverImage as string} width={100} />
             </div>
-            <ReadMore className='mdx relative z-10 flex flex-col gap-4' maxHeight={200}>
+            <ReadMore className='mdx relative z-10 flex flex-col gap-4 w-full' maxHeight={200}>
               <MDXRemote source={project.content} />
             </ReadMore>
           </div>
