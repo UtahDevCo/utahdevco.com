@@ -22,6 +22,6 @@ Our time with BoomPop was marked by quick feature turnarounds and tight collabor
 
 We built BoomPop.com with Next.js, WebFlow, and Amazon AWS using the [SST stack](https://sst.dev/).
 
-We collaborated with Product over Figma, translating designs into pixel-perfect web application features.
+We collaborated with the product team over Figma, translating designs into pixel-perfect web application features.
 
 Our feature development included creation and ownership of Instant Book checkout for virtual events as well as the [BoomPop Budget Optimizer](https://boompop.com/platform/budget-optimizer) that pulls in data from hotels and airlines to generate custom estimates across a matrix of hotels and travel dates.

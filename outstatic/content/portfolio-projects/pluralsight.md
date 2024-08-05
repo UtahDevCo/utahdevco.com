@@ -12,12 +12,12 @@ publishedAt: '2024-07-28T00:00:00.000Z'
 
 ### Project Summary
 
-Pluralsight is a content platform for digital skill development. As such, they rely heavily on their custom video player to deliver their primary product.
+[Pluralsight](https://www.pluralsight.com/) is a content platform for digital skill development. As such, they rely heavily on their custom video player to deliver their primary product.
 
 In the summer of 2018, we worked with Pluralsight to rebuild their web video experience from scratch. A basic HTML video player is trivial to implement, but we had a much higher bar to clear due to accessibility concerns.
 
-The finished product supports desktop with both keyboard- and mouse-based interactions, mobile, and screen readers. We also maintained compatibility for Safari, Internet Explorer, Firefox, and Chrome.
+The finished product supports screen readers, mobile browsers, and desktop browsers with both keyboard- and mouse-based interactions. We were careful to maintain compatibility for Safari, Internet Explorer, Firefox, and Chrome.
 
 ### Technology
 
-The PS video player is built with React. We used MacOS VoiceOver to test for screen reader compatibility.
+The Pluralsight video player is built with React. We used MacOS VoiceOver to test for screen reader compatibility.

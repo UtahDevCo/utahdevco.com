@@ -12,11 +12,11 @@ publishedAt: '2024-07-25T00:00:00.000Z'
 
 ### Project Summary
 
-We started Quiver Photos v1 in January of 2022. It was an exceptionally challenging project, and he was never satisfied with the result.
+We started [Quiver Photos](https://www.quiverphotos.com) v1 in January of 2022. It was an exceptionally challenging project, and we were never satisfied with the result.
 
-The v1 app used a combination of a web app and a command line tool, known as the "desktop app", to load media item records from the Google Photos API and then download them using the API.
+The v1 app used a combination of a web app and a command line tool, known as the "desktop app", to index media item records and then download them using the Google Photos API.
 
-The Google Photos API stripped geo location EXIF metadata, and Apple Live Photos recovery was never supported, leading to a sub-optimal data recovery.
+The Google Photos API stripped geo location EXIF metadata, and Apple Live Photos recovery was never supported, leading to sub-optimal data recovery.
 
 Even worse, the Google Photos API throttled the application to 10k calls a month. As the app got more popular, users would hit API limits and have to wait until the next month to recover their libraries.
 
@@ -26,6 +26,6 @@ This rewrite was completed in early 2024 and has attracted hundreds of users in 
 
 ### Technology
 
-The desktop application uses PocketBase as the database solution and Wails for the desktop application itself. Wails is written in a combination of Golang and React. It runs on a tiny web client that's just enough to run React.
+The desktop application uses [PocketBase](https://pocketbase.io/) as a database solution and [Wails](https://wails.io/) for the desktop application itself. The Wails desktop app is written in a combination of Golang and React. It runs on a lightweight web client.
 
-The hardest aspect of [QuiverPhotos.com](https://www.quiverphotos.com) has been maintaining MacOS, Windows and Linux compatibility. All three platforms work well for most users, but user systems and libraries are inconsistent, leading to difficult-to-diagnose bug reports.
+The hardest aspect of [QuiverPhotos.com](https://www.quiverphotos.com) has been maintaining MacOS, Windows, and Linux compatibility. All three platforms work well for most users, but user systems and libraries are inconsistent, leading to difficult-to-diagnose bug reports.

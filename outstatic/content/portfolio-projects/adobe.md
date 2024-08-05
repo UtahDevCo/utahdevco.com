@@ -12,9 +12,9 @@ publishedAt: '2024-07-31T00:00:00.000Z'
 
 ### Project Summary
 
-We worked with Adobe Workfront from 2018 through 2020. During our engagement we contributed to Workfront's Digital Asset Management (DAM) tool and Adobe XD plugins.
+During our engagement with [Adobe Workfront](https://business.adobe.com/products/workfront/main.html) we contributed to Workfront's Digital Asset Management (DAM) tool and Adobe XD plugins.
 
-Prior to Adobe's Workfront acquisition, we focused on the front-end of the DAM product, working on a team of four developers. Workfront and Adobe's relationship was becoming closer during this time period, and Workfront chose to discontinue work on it's DAM tool in favor of Adobe's Experience Manager Assets product.
+Prior to Adobe's acquisition of Workfront, we focused on the front-end of the DAM product, working on a team of four developers. Workfront and Adobe's relationship was becoming closer during this time period, and Workfront chose to discontinue work on it's DAM tool in favor of Adobe's Experience Manager Assets product.
 
 In the lead-up to Adobe's acquisition of Workfront, we pivoted from Workfront DAM to a new suite of Workfront + Adobe XD plugins. We learned Adobe XD's plugin architecture and produced the first publicly available Workfront plugins for Adobe XD.
 
@@ -24,4 +24,4 @@ Our work with Adobe focused on JavaScript and Node.js, with React Router and Red
 
 We operated in a Scrum environment, collaborating closely with our back-end team and our UX designer.
 
-We wrote a substantial suite of unit test using Jest.
+We wrote a substantial suite of unit tests using Jest.
