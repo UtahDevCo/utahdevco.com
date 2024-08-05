@@ -34,7 +34,7 @@ function FirstHero() {
     <section className='flex flex-col items-center justify-center gap-10 pt-5 sm:pt-10 pb-10'>
       <div className='flex flex-col items-center justify-center gap-4'>
         <h2 className='text-2xl sm:text-3xl font-bold border-2 border-primary-foreground rounded-sm py-1 px-2'>
-          Built for startups
+          App Development Experts
         </h2>
         <p className='text-sm sm:text-base text-center'>
           Strike the balance between <br /> <b>cost</b>, <b>quality</b>, and <b>speed to market</b>
@@ -80,6 +80,7 @@ async function Heroes() {
           </div>
         ))}
       </div>
+
       <BrandLogos />
     </section>
   );
@@ -151,9 +152,9 @@ function Footer() {
       <NextImage
         alt='Topo map'
         className='absolute bottom-[-100px] left-[-150px] sm:bottom-[-200px] sm:left-[-250px] lg:bottom-[-300px] lg:left-[-500px] z-[-1]'
-        height={12 * 100}
+        height={15 * 100}
         src='/images/graphics/topomap-black-1500x1159.webp'
-        width={12 * 77}
+        width={15 * 77}
       />
       <div className='flex flex-col gap-1 text-sm sm:text-base font-medium text-right'>
         <a href={CONSTANTS.META.CONTACT_URL}>hey@utahdevco.com</a>

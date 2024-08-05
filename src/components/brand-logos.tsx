@@ -74,7 +74,7 @@ export function BrandLogos() {
     }, 1000 * 2);
 
     return () => clearInterval(interval);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
