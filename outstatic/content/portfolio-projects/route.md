@@ -7,7 +7,7 @@ author:
 slug: 'route'
 description: ''
 coverImage: '/images/route-logo-black-small-I0NT.svg'
-publishedAt: '2024-08-05T14:44:00.725Z'
+publishedAt: '2024-07-28T00:00:00.000Z'
 ---
 
 ### Project Summary

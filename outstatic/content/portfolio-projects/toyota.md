@@ -7,7 +7,7 @@ author:
 slug: 'toyota'
 description: ''
 coverImage: '/images/toyota-logo-black-small-UzND.svg'
-publishedAt: '2024-08-05T14:46:41.224Z'
+publishedAt: '2024-07-29T00:00:00.000Z'
 ---
 
 ### Project Summary

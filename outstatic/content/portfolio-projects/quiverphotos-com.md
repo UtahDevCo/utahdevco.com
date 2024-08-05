@@ -12,7 +12,7 @@ publishedAt: '2024-07-25T00:00:00.000Z'
 
 ### Project Summary
 
-[Chris Esplin](https://www.chrisesplin.com/) started Quiver Photos v1 in January of 2022. It was an exceptionally challenging project, and he was never satisfied with the result.
+We started Quiver Photos v1 in January of 2022. It was an exceptionally challenging project, and he was never satisfied with the result.
 
 The v1 app used a combination of a web app and a command line tool, known as the "desktop app", to load media item records from the Google Photos API and then download them using the API.
 
