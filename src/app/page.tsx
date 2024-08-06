@@ -5,14 +5,13 @@ import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getDocuments } from 'outstatic/server';
 
+import { BrandLogos } from '@/components/brand-logos';
 import { Corners } from '@/components/corners';
 import { Header } from '@/components/header';
 import { ReadMore } from '@/components/read-more';
 import { Button } from '@/components/ui/button';
-import * as LogoSvgs from '@/components/logos';
 
 import { CONSTANTS } from '../../constants';
-import { BrandLogos } from '@/components/brand-logos';
 
 const righteous = Righteous({ subsets: ['latin'], weight: '400' });
 
@@ -31,26 +30,25 @@ export default function Home() {
 
 function FirstHero() {
   return (
-    <section className='flex flex-col items-center justify-center gap-10 pt-5 sm:pt-10 pb-10'>
-      <div className='flex flex-col items-center justify-center gap-4'>
-        <h2 className='text-2xl sm:text-3xl font-bold border-2 border-primary-foreground rounded-sm py-1 px-2'>
+    <section className='flex flex-col items-center justify-center gap-10 pt-5 sm:pt-10 pb-10 w-full'>
+      <div className='flex flex-col flex-1 items-center justify-center gap-4'>
+        <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-primary-foreground rounded-sm py-1 px-2'>
           App Development Experts
         </h2>
-        <p className='text-sm sm:text-base text-center'>
+        <p className='text-base sm:text-lg md:text-xl text-center'>
           Strike the balance between <br /> <b>cost</b>, <b>quality</b>, and <b>speed to market</b>
         </p>
       </div>
 
-      <div className='overflow-hidden rounded-md'>
+      <div className='flex flex-row flex-1 justify-center overflow-hidden rounded-md'>
         <iframe
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
           allowFullScreen
-          frameBorder='0'
-          height='315'
+          height={1.3 * 315}
           referrerPolicy='strict-origin-when-cross-origin'
           src='https://www.youtube.com/embed/t2M_7PHxngk?si=CLAGo4Jdp3q4SYi4'
-          title='YouTube video player'
-          width='560'
+          title='UtahDevCo promo'
+          width={1.3 * 560}
         ></iframe>
       </div>
     </section>
@@ -97,21 +95,23 @@ function CTA() {
   return (
     <section className='flex flex-col items-center justify-center gap-10 py-5 sm:py-10 px-4'>
       <div className='flex flex-col items-center justify-center gap-4'>
-        <h2 className='text-2xl sm:text-3xl font-bold py-1 px-2'>Let&apos;s Talk</h2>
-        <p className='text-sm sm:text-base text-center'>Building a business can be lonely. We&apos;re here for you.</p>
-        <div className='flex flex-col sm:flex-row gap-4 py-4'>
+        <h2 className='text-2xl sm:text-3xl md:text-5xl font-bold py-1 px-2'>Let&apos;s Talk</h2>
+        <p className='text-sm sm:text-lg md:text-xl text-center'>
+          Building a business can be lonely. We&apos;re here for you.
+        </p>
+        <div className='flex flex-col sm:flex-row gap-4 md:gap-10 py-5 md:py-10'>
           <Link href={CONSTANTS.META.CONTACT_URL}>
-            <Button className='w-32 sm:w-48' variant='default'>
+            <Button className='w-32 sm:w-48 md:text-lg md:py-6' variant='default'>
               Contact Us
             </Button>
           </Link>
           <Link href={CONSTANTS.META.BOOKING_URL}>
-            <Button className='w-32 sm:w-48' variant='cta'>
+            <Button className='w-32 sm:w-48 md:text-lg md:py-6' variant='cta'>
               Schedule a call
             </Button>
           </Link>
         </div>
-        <p className='text-sm sm:text-base text-center'>
+        <p className='text-sm sm:text-lg md:text-xl text-center'>
           Let&apos;s kick around <b>product ideas</b>,
           <br />
           talk about <b>project scope</b>,
