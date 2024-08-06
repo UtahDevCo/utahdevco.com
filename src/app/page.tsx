@@ -67,6 +67,13 @@ async function Heroes() {
         backgroundImage: `url(/_next/image?url=${encodeURIComponent('/images/graphics/topomap-repeat-white-50.png')}&w=256&q=100)`,
       }}
     >
+      <div className='flex flex-col items-start justify-start p-4 mx-5 mt-5 gap-2 bg-primary rounded-md height-full'>
+        <h2 className='text-center text-2xl sm:text-3xl font-bold py-1 px-0 w-full'>
+          Based in Salt Lake City, Utah
+          <br />
+          Deploying worldwide
+        </h2>
+      </div>
       <div className='flex flex-col sm:flex-row items-stretch justify-center gap-5 p-5'>
         {heroes.map((hero) => (
           <div
