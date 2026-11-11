@@ -39,18 +39,6 @@ function FirstHero() {
           Strike the balance between <br /> <b>cost</b>, <b>quality</b>, and <b>speed to market</b>
         </p>
       </div>
-
-      <div className='flex flex-row flex-1 justify-center overflow-hidden rounded-md'>
-        <iframe
-          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-          allowFullScreen
-          height={1.3 * 315}
-          referrerPolicy='strict-origin-when-cross-origin'
-          src='https://www.youtube.com/embed/T4o21LD90u4?si=qYjE1g4qaq_orRL0'
-          title='UtahDevCo promo'
-          width={1.3 * 560}
-        ></iframe>
-      </div>
     </section>
   );
 }
