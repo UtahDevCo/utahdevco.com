@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useRef, useMemo, useEffect } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import * as LogoSvgs from './logos';
 
@@ -19,44 +19,49 @@ export function BrandLogos() {
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const offsetActiveIndex = useMemo(() => {
-    const resultIndex = activeIndex + OFFSET_INDEX;
-    const resultEl = scrollRef.current?.querySelector(`div:nth-child(${resultIndex + 1})`) as HTMLDivElement;
+  const offsetActiveIndex = activeIndex + OFFSET_INDEX;
 
-    if (resultEl && scrollRef.current) {
-      const containerWidth = scrollRef.current.clientWidth;
-      const elementWidth = resultEl.clientWidth;
-      const elementLeft = resultEl.offsetLeft;
-      const targetScrollLeft = elementLeft - containerWidth / 2 + elementWidth / 2;
+  useEffect(() => {
+    const scrollEl = scrollRef.current;
+    const resultEl = scrollEl?.querySelector(`div:nth-child(${offsetActiveIndex + 1})`) as HTMLDivElement;
 
-      if (activeIndex === 0) {
-        /** Instant scroll to restart the rotation */
-        scrollRef.current.scrollLeft = targetScrollLeft;
-        setActiveIndex(1);
-      } else {
-        /** Manual slow-scroll */
-        let start: number | null = null;
-        const initialScrollLeft = scrollRef.current.scrollLeft;
+    if (!resultEl || !scrollEl) return;
 
-        const step = (timestamp: number) => {
-          if (!start) start = timestamp;
-          const progress = timestamp - start;
-          const scrollAmount = initialScrollLeft + (targetScrollLeft - initialScrollLeft) * (progress / 1000);
-          scrollRef.current!.scrollLeft = scrollAmount;
+    const containerWidth = scrollEl.clientWidth;
+    const elementWidth = resultEl.clientWidth;
+    const elementLeft = resultEl.offsetLeft;
+    const targetScrollLeft = elementLeft - containerWidth / 2 + elementWidth / 2;
 
-          if (progress < 1000) {
-            requestAnimationFrame(step);
-          } else {
-            scrollRef.current!.scrollLeft = targetScrollLeft;
-          }
-        };
+    if (activeIndex === 0) {
+      /** Instant scroll to restart the rotation */
+      scrollEl.scrollLeft = targetScrollLeft;
+      const frame = requestAnimationFrame(() => setActiveIndex(1));
 
-        requestAnimationFrame(step);
-      }
+      return () => cancelAnimationFrame(frame);
     }
 
-    return resultIndex;
-  }, [activeIndex]);
+    /** Manual slow-scroll */
+    let start: number | null = null;
+    let frame = 0;
+    const initialScrollLeft = scrollEl.scrollLeft;
+
+    const step = (timestamp: number) => {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      const scrollAmount = initialScrollLeft + (targetScrollLeft - initialScrollLeft) * (progress / 1000);
+      scrollEl.scrollLeft = scrollAmount;
+
+      if (progress < 1000) {
+        frame = requestAnimationFrame(step);
+      } else {
+        scrollEl.scrollLeft = targetScrollLeft;
+      }
+    };
+
+    frame = requestAnimationFrame(step);
+
+    return () => cancelAnimationFrame(frame);
+  }, [activeIndex, offsetActiveIndex]);
 
   useEffect(() => {
     const resultIndex = activeIndex + OFFSET_INDEX;

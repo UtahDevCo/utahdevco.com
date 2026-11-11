@@ -11,7 +11,7 @@ import { Header } from '@/components/header';
 import { ReadMore } from '@/components/read-more';
 import { Button } from '@/components/ui/button';
 
-import { CONSTANTS } from '../../constants';
+import { CONSTANTS } from '../../../constants';
 
 const righteous = Righteous({ subsets: ['latin'], weight: '400' });
 
@@ -32,7 +32,7 @@ function FirstHero() {
   return (
     <section className='flex flex-col items-center justify-center gap-10 pt-5 sm:pt-10 pb-10 w-full'>
       <div className='flex flex-col flex-1 items-center justify-center gap-4'>
-        <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-primary-foreground rounded-sm py-1 px-2'>
+        <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-primary-foreground rounded-xs py-1 px-2'>
           App Development Experts
         </h2>
         <p className='text-base sm:text-lg md:text-xl text-center'>
