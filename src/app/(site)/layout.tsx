@@ -7,7 +7,7 @@ const chivo = Chivo({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
 export const metadata: Metadata = {
   title: 'UtahDevCo',
-  description: 'Built for startups',
+  description: 'Agentic development for business: custom internal tools and practical LLM workflows.',
 };
 
 type RootLayoutProps = Readonly<{

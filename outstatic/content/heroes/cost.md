@@ -10,6 +10,6 @@ coverImage: ''
 publishedAt: '2024-07-26T20:16:54.470Z'
 ---
 
-Product excellence starts with keeping costs under control.
+Custom software and AI adoption shouldn't require a full-time engineering department.
 
-We’ll help you scope your project and provide recommendations for staffing it. Bring your CTO, or let us provide one. Tap our network of on- and off-shore resources to build a high-performing team that you can afford.
+Agentic development lets a small senior team deliver what used to take a large agency. We scope the work honestly, build the right-sized tool for your budget, and help your team use LLMs effectively from day one.

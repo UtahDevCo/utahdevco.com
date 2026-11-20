@@ -10,6 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "check:booking": "node scripts/check-booking-link.mjs",
     "prettier": "prettier --write .",
     "l:fix": "eslint --fix ."
   },

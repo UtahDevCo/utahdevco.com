@@ -9,8 +9,8 @@ export async function Header() {
       </Link>
       <nav className='grow flex flex-col-reverse sm:flex-row justify-end gap-4'>
         <div className='text-right pl-2 sm:pl-10 text-xs sm:text-base'>
-          <p>Design + Build</p>
-          <p>Web // iOS // Android</p>
+          <p>Build + Advise</p>
+          <p>Custom Tools // AI Workflows // Apps</p>
         </div>
       </nav>
     </header>

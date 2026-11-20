@@ -10,6 +10,6 @@ coverImage: ''
 publishedAt: '2024-07-26T20:18:32.294Z'
 ---
 
-Speed to market is non-negotiable.
+Ship custom internal tools in weeks instead of quarters.
 
-Your product needs to be in customers hands ASAP. We recommend at maximum 2 months of development before onboarding your first users. Customers provide feedback, driving iteration and a growing userbase.
+Coding agents handle the heavy lifting so your team gets working software in hand fast. Early releases let real users shape the workflow through rapid iteration.

@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import { Righteous } from 'next/font/google';
 import NextImage from 'next/image';
-import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getDocuments } from 'outstatic/server';
 
@@ -31,12 +30,12 @@ export default function Home() {
 function FirstHero() {
   return (
     <section className='flex flex-col items-center justify-center gap-10 pt-5 sm:pt-10 pb-10 w-full'>
-      <div className='flex flex-col flex-1 items-center justify-center gap-4'>
-        <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-primary-foreground rounded-xs py-1 px-2'>
-          App Development Experts
+      <div className='flex flex-col flex-1 items-center justify-center gap-4 px-4'>
+        <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold border-2 border-primary-foreground rounded-xs py-1 px-2 text-center'>
+          Agentic Development for Business
         </h2>
         <p className='text-base sm:text-lg md:text-xl text-center'>
-          Strike the balance between <br /> <b>cost</b>, <b>quality</b>, and <b>speed to market</b>
+          Ship <b>custom internal tools</b> in weeks <br /> and put <b>LLMs</b> to work across your operations
         </p>
       </div>
     </section>
@@ -88,16 +87,14 @@ function CTA() {
           Building a business can be lonely. We&apos;re here for you.
         </p>
         <div className='flex flex-col sm:flex-row gap-4 md:gap-10 py-5 md:py-10'>
-          <Link href={CONSTANTS.META.CONTACT_URL}>
-            <Button className='w-32 sm:w-48 md:text-lg md:py-6' variant='default'>
-              Contact Us
-            </Button>
-          </Link>
-          <Link href={CONSTANTS.META.BOOKING_URL}>
-            <Button className='w-32 sm:w-48 md:text-lg md:py-6' variant='cta'>
+          <Button asChild className='w-32 sm:w-48 md:text-lg md:py-6 no-underline' variant='default'>
+            <a href={CONSTANTS.META.CONTACT_URL}>Contact Us</a>
+          </Button>
+          <Button asChild className='w-32 sm:w-48 md:text-lg md:py-6 no-underline' variant='cta'>
+            <a href={CONSTANTS.META.BOOKING_URL} rel='noopener noreferrer' target='_blank'>
               Schedule a call
-            </Button>
-          </Link>
+            </a>
+          </Button>
         </div>
         <p className='text-sm sm:text-lg md:text-xl text-center'>
           Let&apos;s kick around <b>product ideas</b>,

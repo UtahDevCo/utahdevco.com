@@ -1,0 +1,25 @@
+name: Check Booking Link
+
+on:
+  schedule:
+    # Weekly on Mondays at 15:00 UTC (8:00 AM MST / 9:00 AM MDT)
+    - cron: '0 15 * * 1'
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'constants.ts'
+      - 'scripts/check-booking-link.mjs'
+      - '.github/workflows/check-booking-link.yml'
+
+jobs:
+  check-booking-link:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verify booking link is active
+        run: npm run check:booking
