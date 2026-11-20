@@ -20,8 +20,8 @@ A variety of telehealth-style services exist to connect patients and counselors.
 
 ### Technology
 
-TherapyAnimalHub.com is built on Next.js and deployed to Vercel. It uses React Server Components and a Firebase backend.
+TherapyAnimalHub.com is built on Next.js and React Server Components with Drizzle ORM and Turso (libSQL/SQLite), plus Postgres reporting sync and automated reconciliation pipelines.
 
-The trickiest parts of this application are Stripe-related. It's a two-side marketplace, with the addition of affiliate partnerships, so we used Stripe Express Connect accounts for both the affiliates and the service providers. The providers get paid daily as they service new clients. The affiliates get paid monthly based on tracked promotion codes.
+The trickiest parts of this application are Stripe-related. It's a two-sided marketplace with affiliate partnerships, so we used Stripe Express Connect accounts for both the affiliates and the service providers. Providers are paid daily as they service new clients, and affiliates are paid monthly based on tracked promotion codes.
 
-The application started as a simple intake form and grew dramatically as we discovered new business requirements. We're planning a full rewrite of the application layer, scheduled to launch in Q4 of 2024.
+What started as a simple intake form has evolved into a full operational platform handling intake, clinician matching, multi-tier affiliate attribution, transactional email/SMS workflows, and automated payouts.

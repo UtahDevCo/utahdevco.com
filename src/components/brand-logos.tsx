@@ -10,6 +10,8 @@ const BRAND_LOGOS = [
   { alt: 'Pluralsight', component: LogoSvgs.PluralsightSvg },
   { alt: 'Route', component: LogoSvgs.RouteSvg },
   { alt: 'Toyota', component: LogoSvgs.ToyotaSvg },
+  { alt: 'Trikin Capital', component: LogoSvgs.TrikinSvg },
+  { alt: 'Wiley', component: LogoSvgs.WileySvg },
 ];
 
 const TRIPLE_BRAND_LOGOS = [...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS];

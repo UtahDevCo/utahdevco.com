@@ -12,7 +12,7 @@ publishedAt: '2024-07-25T00:00:00.000Z'
 
 ### Project Summary
 
-[Calligraphy.org](http://Calligraphy.org) launched in 2012 as a joint project between [Chris](https://www.chrisesplin.com/) and [Melissa ](https://www.instagram.com/melissapher) Esplin.
+[Calligraphy.org](https://calligraphy.org) launched in 2012 as a joint project between [Chris](https://www.chrisesplin.com/) and [Melissa](https://www.instagram.com/melissapher) Esplin.
 
 Melissa is a calligrapher and had begun teaching local classes. Chris was just learning how to develop basic CRUD apps using the Symfony PHP framework.
 
