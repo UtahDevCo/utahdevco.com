@@ -60,10 +60,10 @@ async function Heroes() {
           Deploying worldwide
         </h2>
       </div>
-      <div className='flex flex-col sm:flex-row items-stretch justify-center gap-5 p-5'>
+      <div className='grid grid-cols-1 sm:grid-cols-3 gap-5 p-5'>
         {heroes.map((hero) => (
           <div
-            className='flex flex-col items-start justify-start p-4 gap-2 bg-primary rounded-md height-full'
+            className='flex flex-col items-start justify-start p-4 gap-2 bg-primary rounded-md h-full'
             key={hero.title}
           >
             <h2 className='text-2xl sm:text-3xl font-bold py-1 px-0'>{hero.title}</h2>
@@ -106,7 +106,7 @@ function CTA() {
           <br />
           talk about <b>project scope</b>,
           <br />
-          or <b>start a quotation</b>,
+          or <b>start a quotation</b>.
         </p>
       </div>
     </section>
