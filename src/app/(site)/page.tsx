@@ -5,6 +5,7 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getDocuments } from 'outstatic/server';
 
 import { BrandLogos } from '@/components/brand-logos';
+import { ContactDrawer } from '@/components/contact-drawer';
 import { Corners } from '@/components/corners';
 import { Header } from '@/components/header';
 import { ReadMore } from '@/components/read-more';
@@ -87,9 +88,13 @@ function CTA() {
           Building a business can be lonely. We&apos;re here for you.
         </p>
         <div className='flex flex-col sm:flex-row gap-4 md:gap-10 py-5 md:py-10'>
-          <Button asChild className='w-32 sm:w-48 md:text-lg md:py-6 no-underline' variant='default'>
-            <a href={CONSTANTS.META.CONTACT_URL}>Contact Us</a>
-          </Button>
+          <ContactDrawer
+            trigger={
+              <Button className='w-32 sm:w-48 md:text-lg md:py-6 cursor-pointer' type='button' variant='default'>
+                Contact Us
+              </Button>
+            }
+          />
           <Button asChild className='w-32 sm:w-48 md:text-lg md:py-6 no-underline' variant='cta'>
             <a href={CONSTANTS.META.BOOKING_URL} rel='noopener noreferrer' target='_blank'>
               Schedule a call
@@ -149,7 +154,13 @@ function Footer() {
         width={15 * 77}
       />
       <div className='flex flex-col gap-1 text-sm sm:text-base font-medium text-right'>
-        <a href={CONSTANTS.META.CONTACT_URL}>hey@utahdevco.com</a>
+        <ContactDrawer
+          trigger={
+            <button className='underline text-right cursor-pointer' type='button'>
+              {CONSTANTS.META.CONTACT_EMAIL}
+            </button>
+          }
+        />
         <span>Draper, Utah</span>
       </div>
     </footer>

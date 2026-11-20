@@ -15,6 +15,7 @@
     "l:fix": "eslint --fix ."
   },
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.1173.0",
     "@mdx-js/loader": "^3.0.1",
     "@mdx-js/react": "^3.0.1",
     "@next/mdx": "16.4.6",
