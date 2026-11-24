@@ -8,6 +8,7 @@ const contactSchema = z.object({
   name: z.string().trim().min(1, 'Name is required').max(120),
   email: z.string().trim().email('Please enter a valid email address').max(254),
   company: z.string().trim().max(120).optional().default(''),
+  referralSource: z.string().trim().max(120).optional().default(''),
   message: z.string().trim().min(5, 'Please include a short message').max(5000),
   website: z.string().max(200).optional().default(''),
 });
@@ -53,7 +54,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: firstIssue }, { status: 400 });
   }
 
-  const { name, email, company, message, website } = parsed.data;
+  const { name, email, company, referralSource, message, website } = parsed.data;
 
   // Silently accept honeypot submissions from bots.
   if (website.trim().length > 0) {
@@ -86,6 +87,7 @@ export async function POST(request: Request) {
     `Name: ${name}`,
     `Email: ${email}`,
     company ? `Company: ${company}` : null,
+    referralSource ? `How they heard about us: ${referralSource}` : null,
     '',
     'Message:',
     message,

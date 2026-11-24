@@ -1,17 +1,28 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-export async function Header() {
+export function Header() {
   return (
-    <header className='flex flex-col sm:flex-row items-center gap-2 py-2 px-2 sm:px-6 bg-secondary text-secondary-foreground w-full'>
-      <Link href='/'>
-        <Image alt='UtahDevCo Logo' height={10 * 3} src='/images/logos/udc-background-logo.png' width={64 * 3} />
+    <header className='flex flex-col md:flex-row items-center justify-between gap-3 py-3 px-4 sm:px-6 bg-secondary text-secondary-foreground w-full'>
+      <Link className='no-underline shrink-0' href='/'>
+        <Image alt='UtahDevCo Logo' height={30} src='/images/logos/udc-background-logo.png' width={192} />
       </Link>
-      <nav className='grow flex flex-col-reverse sm:flex-row justify-end gap-4'>
-        <div className='text-right pl-2 sm:pl-10 text-xs sm:text-base'>
-          <p>Build + Advise</p>
-          <p>Custom Tools // AI Workflows // Apps</p>
-        </div>
+      <nav aria-label='Primary navigation' className='flex flex-wrap items-center justify-center md:justify-end gap-x-5 gap-y-2 text-xs sm:text-sm font-medium'>
+        <Link className='no-underline hover:underline' href='/how-it-works'>
+          How It Works
+        </Link>
+        <Link className='no-underline hover:underline' href='/industries/home-services'>
+          Home Services
+        </Link>
+        <Link className='no-underline hover:underline' href='/industries/wholesale-distribution'>
+          Wholesale
+        </Link>
+        <Link className='no-underline hover:underline' href='/utah-custom-software-comparison'>
+          Compare
+        </Link>
+        <Link className='no-underline hover:underline' href='/#portfolio'>
+          Work
+        </Link>
       </nav>
     </header>
   );

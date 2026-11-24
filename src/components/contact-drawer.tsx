@@ -17,6 +17,7 @@ export function ContactDrawer({ trigger }: ContactDrawerProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [company, setCompany] = useState('');
+  const [referralSource, setReferralSource] = useState('');
   const [message, setMessage] = useState('');
   const [website, setWebsite] = useState('');
   const [status, setStatus] = useState<'idle' | 'submitting' | 'sent' | 'error'>('idle');
@@ -67,7 +68,7 @@ export function ContactDrawer({ trigger }: ContactDrawerProps) {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, company, message, website }),
+        body: JSON.stringify({ name, email, company, referralSource, message, website }),
       });
 
       const data = (await response.json().catch(() => ({}))) as { error?: string };
@@ -84,6 +85,7 @@ export function ContactDrawer({ trigger }: ContactDrawerProps) {
       setName('');
       setEmail('');
       setCompany('');
+      setReferralSource('');
       setMessage('');
       setWebsite('');
     } catch {
@@ -256,8 +258,31 @@ export function ContactDrawer({ trigger }: ContactDrawerProps) {
                   </div>
 
                   <div className='flex flex-col gap-1.5'>
+                    <label className='text-sm font-medium text-neutral-800' htmlFor='contact-referral'>
+                      How did you hear about us? <span className='font-normal text-neutral-400'>(optional)</span>
+                    </label>
+                    <select
+                      className='rounded-md border border-neutral-300 bg-white px-3 py-2 text-sm focus:border-neutral-900 focus:outline-hidden'
+                      id='contact-referral'
+                      name='referralSource'
+                      onChange={(e) => setReferralSource(e.target.value)}
+                      value={referralSource}
+                    >
+                      <option value=''>Select one...</option>
+                      <option value='ChatGPT / Claude / Perplexity (AI Search)'>
+                        ChatGPT / Claude / Perplexity (AI Search)
+                      </option>
+                      <option value='Google Search'>Google Search</option>
+                      <option value='Referral / Word of Mouth'>Referral / Word of Mouth</option>
+                      <option value='Chris Esplin (YouTube / Website)'>Chris Esplin (YouTube / Website)</option>
+                      <option value='LinkedIn / Social'>LinkedIn / Social</option>
+                      <option value='Other'>Other</option>
+                    </select>
+                  </div>
+
+                  <div className='flex flex-col gap-1.5'>
                     <label className='text-sm font-medium text-neutral-800' htmlFor='contact-message'>
-                      How can we help?
+                      What manual process is costing your team the most time?
                     </label>
                     <textarea
                       className='min-h-[120px] rounded-md border border-neutral-300 px-3 py-2 text-sm focus:border-neutral-900 focus:outline-hidden'
@@ -265,7 +290,7 @@ export function ContactDrawer({ trigger }: ContactDrawerProps) {
                       maxLength={5000}
                       name='message'
                       onChange={(e) => setMessage(e.target.value)}
-                      placeholder='Tell us about the tool you need built or how your team wants to use LLMs...'
+                      placeholder='Tell us about the spreadsheets, data entry, invoicing, or software glue slowing your office down...'
                       required
                       value={message}
                     />
