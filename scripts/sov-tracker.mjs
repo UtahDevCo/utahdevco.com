@@ -15,11 +15,33 @@
  *   node scripts/sov-tracker.mjs --cohort=test
  */
 
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const repoRoot = dirname(__dirname);
+
+// Load .env.local then .env (without overriding already-exported env vars)
+for (const envFile of ['.env.local', '.env']) {
+  const fullPath = join(repoRoot, envFile);
+  if (!existsSync(fullPath)) continue;
+  for (const rawLine of readFileSync(fullPath, 'utf8').split(/\r?\n/)) {
+    const line = rawLine.trim();
+    if (!line || line.startsWith('#')) continue;
+    const eq = line.indexOf('=');
+    if (eq === -1) continue;
+    const key = line.slice(0, eq).trim();
+    let value = line.slice(eq + 1).trim();
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    }
+    if (key && !(key in process.env)) {
+      process.env[key] = value;
+    }
+  }
+}
+
 const config = JSON.parse(readFileSync(join(__dirname, 'sov-prompts.json'), 'utf8'));
 
 const cohortFilter = process.argv.find((a) => a.startsWith('--cohort='))?.split('=')[1] || 'all';
