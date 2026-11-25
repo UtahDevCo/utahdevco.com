@@ -11,6 +11,8 @@
     "start": "next start",
     "lint": "eslint .",
     "check:booking": "node scripts/check-booking-link.mjs",
+    "seo:indexnow": "node scripts/ping-indexnow.mjs",
+    "seo:sov": "node scripts/sov-tracker.mjs",
     "prettier": "prettier --write .",
     "l:fix": "eslint --fix ."
   },

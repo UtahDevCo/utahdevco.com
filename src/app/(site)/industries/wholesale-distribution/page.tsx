@@ -50,7 +50,7 @@ export default function WholesaleDistributionPage() {
           </h1>
           <p className='text-base sm:text-lg text-neutral-800'>
             If your team spends hours every day re-keying emailed PDF purchase orders, matching bills of lading to
-            vendor invoices, or manually syncing inventory between your ERP and QuickBooks, Utah Dev Co automates the
+            vendor invoices, or manually syncing inventory between your ERP and QuickBooks, UtahDevCo automates the
             pipeline for $0 down and earns 50% of your verified Year-1 savings.
           </p>
         </header>

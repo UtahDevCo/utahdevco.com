@@ -2,22 +2,12 @@ import type { MetadataRoute } from 'next';
 import { getDocuments } from 'outstatic/server';
 
 const BASE_URL = 'https://www.utahdevco.com';
-const SITE_UPDATED = new Date('2026-11-24T00:00:00.000Z');
+const SITE_UPDATED = new Date('2026-11-25T00:00:00.000Z');
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes: MetadataRoute.Sitemap = [
-    {
-      url: BASE_URL,
-      lastModified: SITE_UPDATED,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: `${BASE_URL}/how-it-works`,
-      lastModified: SITE_UPDATED,
-      changeFrequency: 'monthly',
-      priority: 0.95,
-    },
+    { url: BASE_URL, lastModified: SITE_UPDATED, changeFrequency: 'weekly', priority: 1 },
+    { url: `${BASE_URL}/how-it-works`, lastModified: SITE_UPDATED, changeFrequency: 'monthly', priority: 0.95 },
     {
       url: `${BASE_URL}/industries/home-services`,
       lastModified: SITE_UPDATED,
@@ -32,6 +22,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${BASE_URL}/utah-custom-software-comparison`,
+      lastModified: SITE_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    { url: `${BASE_URL}/guides`, lastModified: SITE_UPDATED, changeFrequency: 'weekly', priority: 0.85 },
+    {
+      url: `${BASE_URL}/guides/automating-bank-portals-without-apis`,
+      lastModified: SITE_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/guides/automated-payouts-and-payment-reconciliation`,
+      lastModified: SITE_UPDATED,
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${BASE_URL}/guides/replacing-expensive-saas-with-custom-workflows`,
       lastModified: SITE_UPDATED,
       changeFrequency: 'monthly',
       priority: 0.85,

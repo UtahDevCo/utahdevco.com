@@ -10,15 +10,15 @@ import { Button } from '@/components/ui/button';
 import { CONSTANTS } from '../../../../constants';
 
 export const metadata: Metadata = {
-  title: 'Utah Custom Software Comparison: In-House vs. Agency vs. Utah Dev Co',
+  title: 'Utah Custom Software Comparison: In-House vs. Agency vs. UtahDevCo',
   description:
-    'Side-by-side comparison of hiring an in-house developer, a traditional Utah software agency, off-the-shelf SaaS, or Utah Dev Co ($0-down audit + 50% Year-1 savings).',
+    'Side-by-side comparison of hiring an in-house developer, a traditional Utah software agency, off-the-shelf SaaS, or UtahDevCo ($0-down audit + 50% Year-1 savings).',
   alternates: { canonical: '/utah-custom-software-comparison' },
 };
 
 const faqs: FaqItem[] = [
   {
-    question: 'When should a Utah business hire an in-house developer instead of Utah Dev Co?',
+    question: 'When should a Utah business hire an in-house developer instead of UtahDevCo?',
     answer:
       'Hire in-house if software is your core commercial product and you need 40+ hours per week of continuous feature development indefinitely. For non-tech companies automating back-office workflows, a $140,000+ full-time salary plus benefits rarely pays back.',
   },
@@ -41,7 +41,7 @@ export default function ComparisonPage() {
             Buyer&apos;s Guide. Updated November 2026.
           </p>
           <h1 className='text-3xl sm:text-4xl md:text-5xl font-bold leading-tight'>
-            In-house developer vs. Utah dev agency vs. Utah Dev Co
+            In-house developer vs. Utah dev agency vs. UtahDevCo
           </h1>
           <p className='text-base sm:text-lg text-neutral-800'>
             Non-tech Utah businesses ($2M to $30M) rarely need a $150k/yr full-time engineer or a $75k agency discovery
@@ -58,7 +58,7 @@ export default function ComparisonPage() {
                 <th className='border border-neutral-300 p-3 font-bold'>Traditional Utah agency</th>
                 <th className='border border-neutral-300 p-3 font-bold'>Off-the-shelf SaaS</th>
                 <th className='border border-neutral-300 p-3 font-bold bg-secondary text-secondary-foreground'>
-                  Utah Dev Co
+                  UtahDevCo
                 </th>
               </tr>
             </thead>

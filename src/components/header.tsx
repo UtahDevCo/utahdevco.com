@@ -17,6 +17,9 @@ export function Header() {
         <Link className='no-underline hover:underline' href='/industries/wholesale-distribution'>
           Wholesale
         </Link>
+        <Link className='no-underline hover:underline' href='/guides'>
+          Guides
+        </Link>
         <Link className='no-underline hover:underline' href='/utah-custom-software-comparison'>
           Compare
         </Link>

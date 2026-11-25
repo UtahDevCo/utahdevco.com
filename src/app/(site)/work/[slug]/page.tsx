@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: WorkPageProps): Promise<Metad
 
   const description =
     (project.description as string) ||
-    `${project.title} custom software and architecture case study by Utah Dev Co in Draper, Utah.`;
+    `${project.title} custom software and architecture case study by UtahDevCo in Draper, Utah.`;
 
   return {
     title: `${project.title} — Case Study`,
@@ -68,7 +68,7 @@ export default async function WorkCaseStudyPage({ params }: WorkPageProps) {
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: `${project.title} — Utah Dev Co Case Study`,
+    headline: `${project.title} — UtahDevCo Case Study`,
     datePublished: publishedAt,
     dateModified: publishedAt,
     author: {
@@ -78,10 +78,10 @@ export default async function WorkCaseStudyPage({ params }: WorkPageProps) {
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Utah Dev Co',
-      url: 'https://utahdevco.com',
+      name: 'UtahDevCo',
+      url: 'https://www.utahdevco.com',
     },
-    mainEntityOfPage: `https://utahdevco.com/work/${slug}`,
+    mainEntityOfPage: `https://www.utahdevco.com/work/${slug}`,
   };
 
   return (
@@ -101,7 +101,7 @@ export default async function WorkCaseStudyPage({ params }: WorkPageProps) {
           ) : null}
           <div className='flex flex-col gap-2'>
             <p className='text-xs font-bold uppercase tracking-widest text-neutral-500'>
-              Utah Dev Co Case Study · Updated {formattedDate}
+              UtahDevCo Case Study · Updated {formattedDate}
             </p>
             <h1 className='text-3xl sm:text-4xl font-bold'>{project.title}</h1>
           </div>

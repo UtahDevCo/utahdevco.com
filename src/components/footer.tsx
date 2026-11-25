@@ -29,6 +29,7 @@ export function Footer() {
           <Link href='/how-it-works'>50% Savings Model</Link>
           <Link href='/industries/home-services'>Home Services</Link>
           <Link href='/industries/wholesale-distribution'>Wholesale &amp; Distribution</Link>
+          <Link href='/guides'>Guides</Link>
           <Link href='/utah-custom-software-comparison'>Compare Options</Link>
           <Link href='/#portfolio'>Portfolio</Link>
         </nav>

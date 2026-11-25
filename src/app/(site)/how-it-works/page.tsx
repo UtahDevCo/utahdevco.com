@@ -12,7 +12,7 @@ import { CONSTANTS } from '../../../../constants';
 export const metadata: Metadata = {
   title: '$0-Down Workflow Audit & 50% Year-1 Savings Model',
   description:
-    'How Utah Dev Co automates back-office workflows for $0 down and earns 50% of verifiable Year-1 savings. See worked ROI math, qualification criteria, and FAQs.',
+    'How UtahDevCo automates back-office workflows for $0 down and earns 50% of verifiable Year-1 savings. See worked ROI math, qualification criteria, and FAQs.',
   alternates: { canonical: '/how-it-works' },
 };
 
@@ -60,7 +60,7 @@ export default function HowItWorksPage() {
           </h1>
           <p className='text-base sm:text-lg text-neutral-800'>
             Qualifying Utah businesses pay $0 upfront for a hands-on Workflow &amp; ROI Audit. If we build the
-            automation, Utah Dev Co earns 50% of the pre-agreed, verifiable Year-1 savings and you keep the other 50%,
+            automation, UtahDevCo earns 50% of the pre-agreed, verifiable Year-1 savings and you keep the other 50%,
             then 100% every year after.
           </p>
         </header>
@@ -78,7 +78,7 @@ export default function HowItWorksPage() {
                   <th className='border border-neutral-300 p-3 font-bold'>Workflow example</th>
                   <th className='border border-neutral-300 p-3 font-bold'>Verified Year-1 savings</th>
                   <th className='border border-neutral-300 p-3 font-bold'>You keep (Year 1)</th>
-                  <th className='border border-neutral-300 p-3 font-bold'>Utah Dev Co (50%)</th>
+                  <th className='border border-neutral-300 p-3 font-bold'>UtahDevCo (50%)</th>
                   <th className='border border-neutral-300 p-3 font-bold'>You keep (Year 2+)</th>
                 </tr>
               </thead>

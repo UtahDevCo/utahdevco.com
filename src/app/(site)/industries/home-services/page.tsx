@@ -25,7 +25,7 @@ const faqs: FaqItem[] = [
   {
     question: 'How is this different from generic AI voice-bot agencies?',
     answer:
-      'Most AI agencies sell one-size-fits-all missed-call chatbots. Utah Dev Co is a senior engineering studio in Draper, Utah that fixes deeper back-office bottlenecks: job costing, payroll and commission reconciliation, PO matching, and QuickBooks sync, all backed by our 50% Year-1 savings model.',
+      'Most AI agencies sell one-size-fits-all missed-call chatbots. UtahDevCo is a senior engineering studio in Draper, Utah that fixes deeper back-office bottlenecks: job costing, payroll and commission reconciliation, PO matching, and QuickBooks sync, all backed by our 50% Year-1 savings model.',
   },
   {
     question: 'How fast can a Utah home services company see results?',
@@ -51,7 +51,7 @@ export default function HomeServicesPage() {
           <p className='text-base sm:text-lg text-neutral-800'>
             If your $3M to $20M HVAC, plumbing, electrical, or roofing shop is spending 20+ hours a week reconciling
             ServiceTitan or Jobber with QuickBooks, matching supplier POs, and calculating technician commissions in
-            spreadsheets, Utah Dev Co automates it for $0 down and earns 50% of your verified Year-1 savings.
+            spreadsheets, UtahDevCo automates it for $0 down and earns 50% of your verified Year-1 savings.
           </p>
         </header>
 

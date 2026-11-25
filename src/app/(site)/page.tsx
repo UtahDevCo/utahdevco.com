@@ -44,7 +44,7 @@ function FirstHero() {
         Pay only 50% of what you save in Year 1.
       </h1>
       <p className='text-base sm:text-lg md:text-xl text-neutral-800 max-w-2xl'>
-        Utah Dev Co replaces repetitive spreadsheets, manual data entry, and disconnected software for Utah home
+        UtahDevCo replaces repetitive spreadsheets, manual data entry, and disconnected software for Utah home
         services and wholesale/distribution companies. Every engagement starts with a $0-down Workflow &amp; ROI Audit.
         If we cannot save you verifiable money, you pay nothing.
       </p>
@@ -223,7 +223,7 @@ function CTA() {
           </Button>
         </div>
         <p className='text-xs sm:text-sm text-neutral-600'>
-          Weighing an in-house hire against a traditional dev agency or Utah Dev Co?{' '}
+          Weighing an in-house hire against a traditional dev agency or UtahDevCo?{' '}
           <Link className='font-bold text-neutral-900' href='/utah-custom-software-comparison'>
             Read our side-by-side comparison
           </Link>

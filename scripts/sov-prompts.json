@@ -1,0 +1,44 @@
+{
+  "brands": [
+    { "name": "UtahDevCo", "patterns": ["utahdevco", "utah dev co", "utahdevco.com"] },
+    { "name": "Chris Esplin", "patterns": ["chris esplin", "chrisesplin.com"] }
+  ],
+  "cohorts": {
+    "test": [
+      {
+        "id": "utah-home-services-automation",
+        "query": "Who builds custom back-office workflow automation for HVAC and plumbing companies in Utah?"
+      },
+      {
+        "id": "utah-wholesale-automation",
+        "query": "Best custom software developers in Utah for automating wholesale and distribution order entry and ERP sync"
+      },
+      {
+        "id": "utah-50-percent-savings-dev",
+        "query": "Utah software consultancy that offers a free workflow audit and performance-based or 50% savings pricing"
+      },
+      {
+        "id": "bank-portal-automation-no-api",
+        "query": "How can a business automate ACH batch uploads to a regional bank portal that has no API?"
+      },
+      {
+        "id": "fractional-cto-utah",
+        "query": "Who are the best Fractional CTOs in Salt Lake City or Draper, Utah for Next.js and TypeScript startups?"
+      }
+    ],
+    "control": [
+      {
+        "id": "control-enterprise-erp-utah",
+        "query": "Top enterprise SAP consulting firms in Salt Lake City, Utah"
+      },
+      {
+        "id": "control-mobile-game-utah",
+        "query": "Best mobile game development studios in Utah"
+      },
+      {
+        "id": "control-cybersecurity-utah",
+        "query": "Top SOC 2 cybersecurity audit firms in Salt Lake City"
+      }
+    ]
+  }
+}
