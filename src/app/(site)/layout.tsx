@@ -9,7 +9,7 @@ import './globals.css';
 const chivo = Chivo({ subsets: ['latin'], weight: ['400', '500', '700'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://utahdevco.com'),
+  metadataBase: new URL('https://www.utahdevco.com'),
   title: {
     default: 'Utah Dev Co — Back-Office Automation & Custom Software | Pay 50% of Year-1 Savings',
     template: '%s | Utah Dev Co',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://utahdevco.com',
+    url: 'https://www.utahdevco.com',
     siteName: 'Utah Dev Co',
     title: 'Utah Dev Co — Cut Manual Back-Office Work, Pay Only 50% of Year-1 Savings',
     description:

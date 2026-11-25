@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getDocuments } from 'outstatic/server';
 
-const BASE_URL = 'https://utahdevco.com';
+const BASE_URL = 'https://www.utahdevco.com';
 const SITE_UPDATED = new Date('2026-11-24T00:00:00.000Z');
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

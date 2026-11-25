@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/outstatic/', '/api/'],
       },
     ],
-    sitemap: 'https://utahdevco.com/sitemap.xml',
+    sitemap: 'https://www.utahdevco.com/sitemap.xml',
   };
 }
