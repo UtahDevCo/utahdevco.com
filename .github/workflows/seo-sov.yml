@@ -1,0 +1,42 @@
+name: Weekly AI Share-of-Voice Report
+
+on:
+  schedule:
+    # Every Monday at 15:00 UTC (~8:00 AM MST / 9:00 AM MDT)
+    - cron: '0 15 * * 1'
+  workflow_dispatch:
+
+jobs:
+  sov-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Share-of-Voice tracker and email report
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
+          AWS_SES_REGION: ${{ secrets.AWS_SES_REGION }}
+          AWS_SES_ACCESS_KEY_ID: ${{ secrets.AWS_SES_ACCESS_KEY_ID }}
+          AWS_SES_SECRET_ACCESS_KEY: ${{ secrets.AWS_SES_SECRET_ACCESS_KEY }}
+          SOV_TO_EMAIL: ${{ secrets.SOV_TO_EMAIL }}
+        run: npm run seo:sov -- --email
+
+      - name: Upload Share-of-Voice logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sov-logs-${{ github.run_number }}
+          path: scripts/sov-logs/
+          retention-days: 90
