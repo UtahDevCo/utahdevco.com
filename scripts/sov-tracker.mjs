@@ -18,6 +18,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const repoRoot = dirname(__dirname);
@@ -45,6 +46,7 @@ for (const envFile of ['.env.local', '.env']) {
 const config = JSON.parse(readFileSync(join(__dirname, 'sov-prompts.json'), 'utf8'));
 
 const cohortFilter = process.argv.find((a) => a.startsWith('--cohort='))?.split('=')[1] || 'all';
+const shouldEmail = process.argv.includes('--email');
 const openaiKey = process.env.OPENAI_API_KEY;
 const geminiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
 const perplexityKey = process.env.PERPLEXITY_API_KEY;
@@ -198,9 +200,40 @@ async function main() {
     '',
   ];
   const mdPath = join(outDir, `sov-${dateSlug}.md`);
-  writeFileSync(mdPath, mdLines.join('\n'));
+  const mdReport = mdLines.join('\n');
+  writeFileSync(mdPath, mdReport);
 
   console.log(`\nSaved:\n  ${jsonPath}\n  ${mdPath}`);
+
+  if (shouldEmail) {
+    const region = process.env.AWS_SES_REGION || process.env.AWS_REGION;
+    const accessKeyId = process.env.AWS_SES_ACCESS_KEY_ID || process.env.AWS_ACCESS_KEY_ID;
+    const secretAccessKey = process.env.AWS_SES_SECRET_ACCESS_KEY || process.env.AWS_SECRET_ACCESS_KEY;
+    if (!region || !accessKeyId || !secretAccessKey) {
+      throw new Error('Cannot send email: missing AWS_SES_REGION / AWS_SES_ACCESS_KEY_ID / AWS_SES_SECRET_ACCESS_KEY');
+    }
+
+    const fromEmail = process.env.SES_FROM_EMAIL || 'hey@utahdevco.com';
+    const toEmail = process.env.SOV_TO_EMAIL || process.env.CONTACT_TO_EMAIL || 'hey@utahdevco.com';
+    const testHits = results.filter((r) => r.cohort === 'test' && r.brandsMentioned.length > 0).length;
+    const testTotal = results.filter((r) => r.cohort === 'test').length;
+
+    const ses = new SESClient({ region, credentials: { accessKeyId, secretAccessKey } });
+    await ses.send(
+      new SendEmailCommand({
+        Source: fromEmail,
+        Destination: { ToAddresses: [toEmail] },
+        Message: {
+          Subject: {
+            Data: `[UtahDevCo] Weekly AI Share-of-Voice (${dateSlug}) - ${testHits}/${testTotal} hits`,
+            Charset: 'UTF-8',
+          },
+          Body: { Text: { Data: mdReport, Charset: 'UTF-8' } },
+        },
+      })
+    );
+    console.log(`Emailed report to ${toEmail} via AWS SES.`);
+  }
 }
 
 main().catch((err) => {
