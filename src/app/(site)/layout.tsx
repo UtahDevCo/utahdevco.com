@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   },
   description:
     'Utah custom software and back-office workflow automation for home services and wholesale/distribution companies. Start with a $0-down Workflow & ROI Audit and pay only 50% of verified Year-1 savings.',
-  alternates: {
-    canonical: '/',
-  },
   openGraph: {
     type: 'website',
     locale: 'en_US',

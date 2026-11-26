@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import type { Metadata } from 'next';
 import { Righteous } from 'next/font/google';
 import NextImage from 'next/image';
 import Link from 'next/link';
@@ -16,6 +17,12 @@ import { Button } from '@/components/ui/button';
 import { CONSTANTS } from '../../../constants';
 
 const righteous = Righteous({ subsets: ['latin'], weight: '400' });
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: '/',
+  },
+};
 
 export default function Home() {
   return (
